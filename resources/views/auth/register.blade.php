@@ -18,24 +18,26 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
-        <!-- CPF -->
-        <div class="mt-4">
-            <x-input-label for="cpf" :value="__('CPF')" />
-            <x-text-input id="cpf" class="block mt-1 w-full" type="text" name="cpf"
-                          :value="old('cpf')" required autocomplete="cpf" placeholder="000.000.000-00" />
-            <x-input-error :messages="$errors->get('cpf')" class="mt-2" />
-        </div>
+        <div class="flex gap-4">
+            <!-- CPF -->
+            <div class="mt-4 w-full">
+                <x-input-label for="cpf" :value="__('CPF')" />
+                <x-text-input id="cpf" class="block mt-1 w-full" type="text" name="cpf"
+                              :value="old('cpf')" required autocomplete="cpf" placeholder="000.000.000-00" />
+                <x-input-error :messages="$errors->get('cpf')" class="mt-2" />
+            </div>
 
-        <!-- COFFITO -->
-        <div class="mt-4">
-            <x-input-label for="coffito" :value="__('COFFITO')" />
-            <x-text-input id="coffito" class="block mt-1 w-full" type="text" name="coffito"
-                          :value="old('coffito')" required autocomplete="coffito" placeholder="000000-X" />
-            <x-input-error :messages="$errors->get('coffito')" class="mt-2" />
+            <!-- COFFITO -->
+            <div class="mt-4 w-full">
+                <x-input-label for="coffito" :value="__('COFFITO')" />
+                <x-text-input id="coffito" class="block mt-1 w-full" type="text" name="coffito"
+                              :value="old('coffito')" required autocomplete="coffito" placeholder="000000-X" />
+                <x-input-error :messages="$errors->get('coffito')" class="mt-2" />
+            </div>
         </div>
 
         <!-- Telefone -->
-        <div class="mt-4">
+        <div class="mt-4 w-full">
             <x-input-label for="telefone" :value="__('Telefone')" />
             <x-text-input id="telefone" class="block mt-1 w-full" type="text" name="telefone"
                           :value="old('telefone')" required autocomplete="telefone" placeholder="(00)00000-0000" />
@@ -50,51 +52,55 @@
             <x-input-error :messages="$errors->get('endereco')" class="mt-2" />
         </div>
 
-        <!-- Cidade -->
-        <div class="mt-4">
-            <x-input-label for="cidade" :value="__('Cidade')"/>
-            <select name="cidade" id="cidade"
-                    class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
-                <option disabled selected>Selecione a sua cidade</option>
-                @foreach( $cidades as $key => $cidade)
-                    <option value="{{ $cidade->name }}">{{ $cidade->name }}</option>
-                @endforeach
-            </select>
+        <div class="flex gap-4">
+            <!-- Cidade -->
+            <div class="mt-4 w-full">
+                <x-input-label for="cidade" :value="__('Cidade')"/>
+                <select name="cidade" id="cidade"
+                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
+                    <option disabled selected>Sua cidade</option>
+                    @foreach( $cidades as $key => $cidade)
+                        <option value="{{ $cidade->name }}">{{ $cidade->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <!-- Atenção -->
+            <div class="mt-4 w-full">
+                <x-input-label for="atencao" :value="__('Atenção')"/>
+                <select name="atencao" id="atencao"
+                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
+                    <option disabled selected>Sua atenção</option>
+                    <option value="basica">Outros</option>
+                    <option value="primaria">Primária</option>
+                    <option value="secundaria">Secundária</option>
+                </select>
+            </div>
         </div>
 
-        <!-- Atenção -->
-        <div class="mt-4">
-            <x-input-label for="atencao" :value="__('Atenção')"/>
-            <select name="atencao" id="atencao"
-                    class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
-                <option disabled selected>Selecione a sua atenção</option>
-                <option value="basica">Outros</option>
-                <option value="primaria">Primária</option>
-                <option value="secundaria">Secundária</option>
-            </select>
-        </div>
+        <div class="flex gap-4">
+            <!-- Password -->
+            <div class="mt-4 w-full">
+                <x-input-label for="password" :value="__('Senha')" />
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Senha')" />
+                <x-text-input id="password" class="block mt-1 w-full"
+                                type="password"
+                                name="password"
+                                required autocomplete="new-password" placeholder="********" />
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" placeholder="********" />
+                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            </div>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+            <!-- Confirm Password -->
+            <div class="mt-4 w-full">
+                <x-input-label for="password_confirmation" :value="__('Confirmar Senha')" />
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirmar Senha')" />
+                <x-text-input id="password_confirmation" class="block mt-1 w-full"
+                                type="password"
+                                name="password_confirmation" required autocomplete="new-password" placeholder="********" />
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" placeholder="********" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+            </div>
         </div>
 
         <div class="flex items-center justify-end mt-4">

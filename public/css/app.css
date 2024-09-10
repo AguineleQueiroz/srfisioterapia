@@ -795,6 +795,9 @@ select{
 .w-8{
   width: 2rem;
 }
+.w-\[40\%\]{
+  width: 40%;
+}
 .w-auto{
   width: auto;
 }
