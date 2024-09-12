@@ -3,6 +3,12 @@
 }
 
 .bg-button-primary {
-    background-color: #186f65;
+    background-color: #186f65!important;
 }
+ .bg-button-primary:hover, .bg-button-primary:focus {
+     background-color: #10574f !important;
+ }
+ .bg-button-primary:active {
+     background-color: #0c4d46 !important;
+ }
 

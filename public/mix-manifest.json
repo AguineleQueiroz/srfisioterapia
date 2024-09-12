@@ -1,6 +1,10 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/img/circle-green.svg": "/img/circle-green.svg",
+    "/img/circle-red.svg": "/img/circle-red.svg",
+    "/img/circle-yellow.svg": "/img/circle-yellow.svg",
     "/img/home-img.svg": "/img/home-img.svg",
-    "/img/logo.svg": "/img/logo.svg"
+    "/img/logo.svg": "/img/logo.svg",
+    "/img/view-more-icon.svg": "/img/view-more-icon.svg"
 }

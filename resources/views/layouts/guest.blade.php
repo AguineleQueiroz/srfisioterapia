@@ -13,6 +13,7 @@
         <!--Styles-->
         <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
         <!-- Scripts -->
+        <script src="https://cdn.tailwindcss.com"></script>
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans text-gray-900 antialiased">
@@ -29,9 +30,9 @@
                 </div>
             </div>
 
-            <div class="flex justify-center items-center py-3 border-b border-gray-100">
+            <div class="flex justify-center items-center py-3 border-b border-gray-100 px-0">
                 <a href="/" class="flex justify-end">
-                    <img src="{{ mix('img/home-img.svg') }}" alt="Home image" width="95%">
+                    <img src="{{ mix('img/home-img.svg') }}" alt="Home image" width="100%">
                 </a>
             </div>
 

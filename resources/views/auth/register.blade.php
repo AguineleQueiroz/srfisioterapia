@@ -57,7 +57,7 @@
             <div class="mt-4 w-full">
                 <x-input-label for="cidade" :value="__('Cidade')"/>
                 <select name="cidade" id="cidade"
-                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
+                        class="w-full border-gray-300 focus:border-[#186f65] focus:ring-[#186f65] rounded-md shadow-sm p-2">
                     <option disabled selected>Sua cidade</option>
                     @foreach( $cidades as $key => $cidade)
                         <option value="{{ $cidade->name }}">{{ $cidade->name }}</option>
@@ -67,13 +67,13 @@
 
             <!-- Atenção -->
             <div class="mt-4 w-full">
-                <x-input-label for="atencao" :value="__('Atenção')"/>
-                <select name="atencao" id="atencao"
-                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
+                <x-input-label for="tipo_atencao" :value="__('Atenção')"/>
+                <select name="tipo_atencao" id="tipo_atencao"
+                        class="w-full border-gray-300 focus:border-[#186f65] focus:ring-[#186f65] rounded-md shadow-sm p-2">
                     <option disabled selected>Sua atenção</option>
-                    <option value="basica">Outros</option>
-                    <option value="primaria">Primária</option>
-                    <option value="secundaria">Secundária</option>
+                    <option value="atencao_basica">Outros</option>
+                    <option value="atencao_primaria">Primária</option>
+                    <option value="atencao_secundaria">Secundária</option>
                 </select>
             </div>
         </div>
@@ -108,7 +108,7 @@
                 {{ __('Já tem uma conta?') }}
             </a>
 
-            <x-primary-button class="ms-4 py-3">
+            <x-primary-button class="ms-4 py-3 bg-button-primary">
                 {{ __('Registrar-se') }}
             </x-primary-button>
         </div>
