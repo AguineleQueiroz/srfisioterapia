@@ -1,21 +1,22 @@
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
+        <div class="flex gap-4">
+            <!-- Name -->
+            <div class="w-full">
+                <x-input-label for="name" :value="__('Nome')" />
+                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name"
+                              :value="old('name')" required autofocus autocomplete="name" placeholder="Jhon Doe"/>
+                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            </div>
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Nome')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name"
-                          :value="old('name')" required autofocus autocomplete="name" placeholder="Jhon Doe"/>
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
-
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
-                          :value="old('email')" required autocomplete="email" placeholder="jhondoe@email.com" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            <!-- Email Address -->
+            <div class="w-full">
+                <x-input-label for="email" :value="__('Email')" />
+                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
+                              :value="old('email')" required autocomplete="email" placeholder="jhondoe@email.com" />
+                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            </div>
         </div>
 
         <div class="flex gap-4">
@@ -34,15 +35,17 @@
                               :value="old('coffito')" required autocomplete="coffito" placeholder="000000-X" />
                 <x-input-error :messages="$errors->get('coffito')" class="mt-2" />
             </div>
+
+            <!-- Telefone -->
+            <div class="mt-4 w-full">
+                <x-input-label for="telefone" :value="__('Telefone')" />
+                <x-text-input id="telefone" class="block mt-1 w-full" type="text" name="telefone"
+                              :value="old('telefone')" required autocomplete="telefone" placeholder="(00)00000-0000" />
+                <x-input-error :messages="$errors->get('telefone')" class="mt-2" />
+            </div>
         </div>
 
-        <!-- Telefone -->
-        <div class="mt-4 w-full">
-            <x-input-label for="telefone" :value="__('Telefone')" />
-            <x-text-input id="telefone" class="block mt-1 w-full" type="text" name="telefone"
-                          :value="old('telefone')" required autocomplete="telefone" placeholder="(00)00000-0000" />
-            <x-input-error :messages="$errors->get('telefone')" class="mt-2" />
-        </div>
+
 
         <!-- Endereço -->
         <div class="mt-4">
@@ -104,7 +107,7 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#186f65]" href="{{ route('login') }}">
                 {{ __('Já tem uma conta?') }}
             </a>
 

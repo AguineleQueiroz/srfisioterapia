@@ -57,10 +57,10 @@
                         {{-- t-header --}}
                         <thead class="bg-gray-100">
                             <tr>
-                                <th scope="col" class="w-1/5 ps-4 py-3 text-start text-xs font-semibold text-gray-700 uppercase">
+                                <th scope="col" class="w-[10%] ps-4 py-3 text-start text-xs font-semibold text-gray-700 uppercase">
                                     Prioridade
                                 </th>
-                                <th scope="col" class="w-1/5 ps-4 py-3 text-start text-xs font-semibold text-gray-700 uppercase">
+                                <th scope="col" class="w-2/5 ps-4 py-3 text-start text-xs font-semibold text-gray-700 uppercase">
                                     Nome
                                 </th>
                                 <th scope="col" class="w-1/5 ps-4 py-3 text-start text-xs font-semibold text-gray-700 uppercase">
@@ -69,14 +69,14 @@
                                 <th scope="col" class="w-1/5 ps-4 py-3 text-start text-xs font-semibold text-gray-700 uppercase">
                                     Data
                                 </th>
-                                <th scope="col" class=" px-4 py-3 text-xs font-semibold text-gray-700 uppercase flex justify-end">
+                                <th scope="col" class="px-4 py-3 text-xs font-semibold text-gray-700 uppercase flex justify-end">
                                     Ver mais
                                 </th>
                             </tr>
                         </thead>
                         {{-- t-body --}}
                         <tbody class="bg-white">
-                            @for($index = 0; $index < 3; $index++)
+                            @for($index = 0; $index < 1; $index++)
                                 @include('components.table-row')
                             @endfor
                         </tbody>
