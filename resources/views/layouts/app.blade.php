@@ -14,6 +14,7 @@
         <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        @include('layouts.scripts')
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">

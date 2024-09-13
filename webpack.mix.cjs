@@ -3,7 +3,8 @@ const glob = require('glob');
 
 mix.js([
     'resources/js/app.js',
-    'resources/js/bootstrap.js'
+    'resources/js/bootstrap.js',
+    'resources/js/application_methods.js'
 ], 'public/js')
 
 mix.postCss('resources/css/app.css', 'public/css', [
