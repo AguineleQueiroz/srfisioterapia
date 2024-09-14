@@ -15,7 +15,7 @@
                         <form action="{{ route('dashboard') }}" method="GET">
                             <label for="searchInput3"></label>
                             <input type="text" id="searchInput3" name="search"
-                                   class="border-gray-300 rounded-md px-3 py-2 w-full bg-white border shadow-sm border-slate-300
+                                   class="border-gray-300 rounded-md px-3 py-2 w-full bg-white border border-slate-300
                                 placeholder-slate-400 focus:outline-none focus:border-[#186f65] focus:ring-[#186f65] block
                                 w-full rounded-md sm:text-sm focus:ring-1 focus:ring-opacity-50" placeholder="Buscar por nome ou CPF...">
 
@@ -76,7 +76,7 @@
                         </thead>
                         {{-- t-body --}}
                         <tbody class="bg-white">
-                            @for($index = 0; $index < 2; $index++)
+                            @for($index = 0; $index < 10; $index++)
                                 @include('components.table-row',['key' => $index])
                             @endfor
                         </tbody>
