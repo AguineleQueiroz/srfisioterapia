@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Atendimento extends Model
 {
@@ -20,12 +22,12 @@ class Atendimento extends Model
         'tipo_cidade'
     ];
 
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function historicoDeEncaminhamentos()
+    public function historicoDeEncaminhamentos(): HasMany
     {
         return $this->hasMany(HistoricoEncaminhamentos::class);
     }

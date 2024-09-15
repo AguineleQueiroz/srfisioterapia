@@ -5,7 +5,7 @@
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-            {{ __("Update your account's profile information and email address.") }}
+            {{ __("Atualize as informações de perfil e endereço de e-mail da sua conta.") }}
         </p>
     </header>
 
@@ -34,21 +34,54 @@
                         {{ __('Your email address is unverified.') }}
 
                         <button form="send-verification" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            {{ __('Click here to re-send the verification email.') }}
+                            {{ __('Clique aqui para reenviar o e-mail de verificação.') }}
                         </button>
                     </p>
 
                     @if (session('status') === 'verification-link-sent')
                         <p class="mt-2 font-medium text-sm text-green-600">
-                            {{ __('A new verification link has been sent to your email address.') }}
+                            {{ __('Um novo link de verificação foi enviado para seu endereço de e-mail.') }}
                         </p>
                     @endif
                 </div>
             @endif
         </div>
 
+        <div class="w-full flex gap-4">
+            <div class="w-full">
+                <x-input-label for="cpf" :value="__('CPF')"/>
+                <x-text-input id="cpf" name="cpf" type="text" class="mt-1 block w-full" :value="old('cpf', $user->cpf)"
+                              required autofocus autocomplete="cpf"/>
+                <x-input-error class="mt-2" :messages="$errors->get('cpf')"/>
+            </div>
+
+            <div class="w-full">
+                <x-input-label for="coffito" :value="__('COFFITO')"/>
+                <x-text-input id="coffito" name="coffito" type="text" class="mt-1 block w-full"
+                              :value="old('coffito', $user->coffito)"
+                              required autofocus autocomplete="coffito" placeholder="000000-X"/>
+                <x-input-error class="mt-2" :messages="$errors->get('coffito')"/>
+            </div>
+
+            <div class="w-full">
+                <x-input-label for="telefone" :value="__('Telefone')"/>
+                <x-text-input id="telefone" name="telefone" type="text" class="mt-1 block w-full"
+                              :value="old('telefone', $user->telefone)"
+                              required autofocus autocomplete="telefone"/>
+                <x-input-error class="mt-2" :messages="$errors->get('telefone')"/>
+            </div>
+        </div>
+
+        <div class="w-full">
+            <x-input-label for="endereco" :value="__('Endereço')"/>
+            <x-text-input id="endereco" name="endereco_prof" type="text" class="mt-1 block w-full"
+                          :value="old('endereco', $user->endereco)"
+                          required autofocus autocomplete="endereco"/>
+            <x-input-error class="mt-2" :messages="$errors->get('endereco')"/>
+        </div>
+
         <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+            <x-primary-button class="bg-button-primary">{{ __('Salvar') }}</x-primary-button>
 
             @if (session('status') === 'profile-updated')
                 <p

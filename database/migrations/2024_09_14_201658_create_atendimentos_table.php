@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('atendimentos', function (Blueprint $table) {
+        Schema::create('atendimentos', function (Blueprint $table) {
             $table->uuid('id')->primary();
 
             $table->uuid('user_id');
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->foreign('atendimento_secundario_id')->references('id')->on('atendimento_secundario')->onDelete('cascade');
 
             $table->string('encaminhamento')->nullable();
-            $table->string('tipo_cidade')->nullable();
+            $table->string('cidade')->nullable();
             $table->timestamps();
         });
     }

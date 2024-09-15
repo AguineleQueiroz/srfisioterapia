@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('historico_encaminhamentos', function (Blueprint $table) {
+        Schema::create('historico_encaminhamentos', function (Blueprint $table) {
             $table->uuid('id')->primary();
 
             $table->uuid('user_id');

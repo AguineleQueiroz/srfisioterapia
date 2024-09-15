@@ -22,7 +22,7 @@
     </td>
 </tr>
 {{-- detalhes completos do atendimento --}}
-<tr id="atendimento_{{$key}}_details" class="hidden">
+<tr id="atendimento_{{$key}}_details" class="details hidden">
     <td class="border border-gray-100"></td>
     <td colspan="4" class="m-0 p-0">
         {{-- informações gerais --}}
