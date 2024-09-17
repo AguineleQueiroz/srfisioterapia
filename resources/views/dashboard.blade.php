@@ -40,7 +40,10 @@
                     </div>
 
                     {{-- register button --}}
-                    <x-primary-button class="ms-3 py-3 bg-button-primary" data-toggle="modal" data-target="#modalNovoPaciente">
+                    <x-primary-button class="ms-3 py-3 bg-button-primary block text-white bg-blue-700 hover:bg-blue-800
+                        focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5
+                        text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        data-modal-target="default-modal" data-modal-toggle="default-modal">
                         {{ __('Novo Paciente') }}
                     </x-primary-button>
                     <!-- Modal -->
@@ -75,8 +78,8 @@
                         </tr>
                         </thead>
                         {{-- t-body --}}
-                        <tbody class="bg-white">
-                            @for($index = 0; $index < 10; $index++)
+                        <tbody class="bg-white" style="font-size: .95rem;">
+                            @for($index = 0; $index < 1; $index++)
                                 @include('components.table-row',['key' => $index])
                             @endfor
                         </tbody>
@@ -85,4 +88,6 @@
             </div>
         </div>
     </div>
+    {{-- modal cadastro/update --}}
+    @include('components.modal-cadastro')
 </x-app-layout>

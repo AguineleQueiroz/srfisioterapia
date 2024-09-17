@@ -12,9 +12,13 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <!--Styles-->
         <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
         @include('layouts.scripts')
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">

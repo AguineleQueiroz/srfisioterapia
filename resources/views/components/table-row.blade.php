@@ -30,7 +30,7 @@
             <h6 class="font-semibold m-0">Informações</h6>
         </div>
 
-        <div class="w-full flex mb-2 ps-4 border-r border-t  border-collapse border-gray-100" style="font-size: .95rem;">
+        <div class="w-full flex mb-2 ps-4 border-r border-t  border-collapse border-gray-100">
             <div class="w-1/2 flex flex-col  pt-4 pe-4">
                 <span>
                     <span class="font-medium"> Sexo: </span>
