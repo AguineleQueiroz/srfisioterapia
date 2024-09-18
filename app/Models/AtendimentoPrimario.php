@@ -11,7 +11,6 @@ class AtendimentoPrimario extends Model
 
     protected $table = 'atendimento_primario';
     protected $fillable = [
-        'id',
         'dor',
         'dor_desc',
         'incapacidade',

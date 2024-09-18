@@ -1,4 +1,4 @@
- input::placeholder, input, select {
+input::placeholder, input, select, textarea::placeholder, textarea {
     font-size: 14px!important;
 }
 

@@ -17,7 +17,8 @@
                             <input type="text" id="searchInput3" name="search"
                                    class="border-gray-300 rounded-md px-3 py-2 w-full bg-white border border-slate-300
                                 placeholder-slate-400 focus:outline-none focus:border-[#186f65] focus:ring-[#186f65] block
-                                w-full rounded-md sm:text-sm focus:ring-1 focus:ring-opacity-50" placeholder="Buscar por nome ou CPF...">
+                                w-full rounded-md sm:text-sm focus:ring-1 focus:ring-opacity-50"
+                                   placeholder="Buscar por nome ou CPF...">
 
                             <button class="hidden" type="submit">Search</button>
                         </form>
@@ -43,7 +44,7 @@
                     <x-primary-button class="ms-3 py-3 bg-button-primary block text-white bg-blue-700 hover:bg-blue-800
                         focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5
                         text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        data-modal-target="default-modal" data-modal-toggle="default-modal">
+                                      data-modal-target="default-modal" data-modal-toggle="default-modal">
                         {{ __('Novo Paciente') }}
                     </x-primary-button>
                     <!-- Modal -->
@@ -60,28 +61,33 @@
                         {{-- t-header --}}
                         <thead class="bg-gray-100">
                         <tr>
-                            <th scope="col" class="w-[10%] ps-4 py-3 text-start text-xs font-semibold text-gray-700 uppercase">
+                            <th scope="col"
+                                class="w-[10%] ps-4 py-3 text-start text-xs font-semibold text-gray-700 uppercase">
                                 Prioridade
                             </th>
-                            <th scope="col" class="w-2/5 ps-4 py-3 text-start text-xs font-semibold text-gray-700 uppercase">
+                            <th scope="col"
+                                class="w-2/5 ps-4 py-3 text-start text-xs font-semibold text-gray-700 uppercase">
                                 Nome
                             </th>
-                            <th scope="col" class="w-1/5 ps-4 py-3 text-start text-xs font-semibold text-gray-700 uppercase">
+                            <th scope="col"
+                                class="w-1/5 ps-4 py-3 text-start text-xs font-semibold text-gray-700 uppercase">
                                 CPF
                             </th>
-                            <th scope="col" class="w-1/5 ps-4 py-3 text-start text-xs font-semibold text-gray-700 uppercase">
+                            <th scope="col"
+                                class="w-1/5 ps-4 py-3 text-start text-xs font-semibold text-gray-700 uppercase">
                                 Data
                             </th>
-                            <th scope="col" class="px-4 py-3 text-xs font-semibold text-gray-700 uppercase flex justify-end">
+                            <th scope="col"
+                                class="px-4 py-3 text-xs font-semibold text-gray-700 uppercase flex justify-end">
                                 Ver mais
                             </th>
                         </tr>
                         </thead>
                         {{-- t-body --}}
                         <tbody class="bg-white" style="font-size: .95rem;">
-                            @for($index = 0; $index < 1; $index++)
-                                @include('components.table-row',['key' => $index])
-                            @endfor
+                        @for($index = 0; $index < 1; $index++)
+                            @include('components.table-row',['key' => $index])
+                        @endfor
                         </tbody>
                     </table>
                 </div>
@@ -89,5 +95,5 @@
         </div>
     </div>
     {{-- modal cadastro/update --}}
-    @include('components.modal-cadastro')
+    @include('components.modal.modal-cadastro')
 </x-app-layout>
